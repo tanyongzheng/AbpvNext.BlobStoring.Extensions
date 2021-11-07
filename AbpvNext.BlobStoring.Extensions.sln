@@ -28,9 +28,30 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbpvNext.BlobStoring.Extens
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Blob.Aliyun", "Demo\Demo.Blob.Aliyun\Demo.Blob.Aliyun.csproj", "{3777B8E5-8EF3-4929-8520-650425855231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Blob.FileSystem", "Demo\Demo.Blob.FileSystem\Demo.Blob.FileSystem.csproj", "{3C1CDE00-13DB-4D98-A39F-D2B98BBB475D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Blob.FileSystem", "Demo\Demo.Blob.FileSystem\Demo.Blob.FileSystem.csproj", "{3C1CDE00-13DB-4D98-A39F-D2B98BBB475D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Blob.WebApi", "Demo\Demo.Blob.WebApi\Demo.Blob.WebApi.csproj", "{80FEADF2-9A8B-4807-8691-1A01424F1869}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Blob.WebApi", "Demo\Demo.Blob.WebApi\Demo.Blob.WebApi.csproj", "{80FEADF2-9A8B-4807-8691-1A01424F1869}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{0730F10A-F1EB-4551-A43F-9A7F1DB98C62}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
+		.github\workflows\publish-nuget.yml = .github\workflows\publish-nuget.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{DD0A7C3B-40C9-48EA-93CD-D5F87AAAD3E6}"
+	ProjectSection(SolutionItems) = preProject
+		build\build-all-release.ps1 = build\build-all-release.ps1
+		build\build-all.ps1 = build\build-all.ps1
+		build\common.ps1 = build\common.ps1
+		build\test-all.ps1 = build\test-all.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nupkg", "nupkg", "{441B5A7B-75AA-4ED9-BAEE-008431B3D12E}"
+	ProjectSection(SolutionItems) = preProject
+		nupkg\common_nupkg.ps1 = nupkg\common_nupkg.ps1
+		nupkg\pack.ps1 = nupkg\pack.ps1
+		nupkg\push_packages.ps1 = nupkg\push_packages.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +109,9 @@ Global
 		{3777B8E5-8EF3-4929-8520-650425855231} = {319A94D5-1D89-434D-8F47-E6AB737468F3}
 		{3C1CDE00-13DB-4D98-A39F-D2B98BBB475D} = {319A94D5-1D89-434D-8F47-E6AB737468F3}
 		{80FEADF2-9A8B-4807-8691-1A01424F1869} = {319A94D5-1D89-434D-8F47-E6AB737468F3}
+		{0730F10A-F1EB-4551-A43F-9A7F1DB98C62} = {D6431D2A-646E-4F5C-8B26-281ADE221102}
+		{DD0A7C3B-40C9-48EA-93CD-D5F87AAAD3E6} = {D6431D2A-646E-4F5C-8B26-281ADE221102}
+		{441B5A7B-75AA-4ED9-BAEE-008431B3D12E} = {D6431D2A-646E-4F5C-8B26-281ADE221102}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {90D39979-FF7E-4C5D-A06C-646802D59A1B}

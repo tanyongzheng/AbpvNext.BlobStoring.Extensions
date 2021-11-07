@@ -1,0 +1,68 @@
+# Action名字
+name: "publish nuget"
+
+# 触发条件
+on: 
+  push:
+    # 分支，!叹号表示否定，该分支不触发
+    branches:
+    - master
+#    - '!releases/**-alpha'
+#    - '!dev'
+#    - '!develop'
+#    - '!feature/*'
+#    - 'develop'
+
+    # 指定格式的标签，正则表达式 v开头，后面是数字
+    tags:
+    - '[vV][1-9]+.[0-9]+.[0-9]+'
+
+    # 忽略的分支 ,不能和分支branches标记同时使用
+    #branches-ignore:
+    #- dev
+
+# 作业
+jobs:
+
+# 作业名
+  publish-nuget:
+
+  # 运行系统
+    runs-on: windows-latest
+
+    # 运行步骤
+    steps:
+
+    # 使用github自带的action，检出指定的分支到Workflow的工作区
+    - name: Check out Git repository
+      uses: actions/checkout@v2
+
+    # 安装dotnet运行环境 ,并带上版本号
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@master
+      with:
+        dotnet-version: 5.0.302
+        
+      # 生成项目  Release模式
+    #- name: Build
+    #  run: dotnet build --configuration Release
+    #  working-directory: .\templates
+
+    
+      # release生成全部项目   
+    - name: Build All
+      run: .\build-all-release.ps1
+      working-directory: .\build
+      shell: pwsh
+
+      # 打包项目
+    - name: Pack Project
+      run: .\pack.ps1
+      working-directory: .\nupkg
+      shell: pwsh
+      
+      # 发布项目到Nuget
+#    - name: Publish AbpvNext To Nuget
+#      run: .\push_packages.ps1 ${{ secrets.NUGET_KEY }}
+#      working-directory: .\nupkg
+#      shell: pwsh
