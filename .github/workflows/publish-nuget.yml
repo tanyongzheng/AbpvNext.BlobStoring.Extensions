@@ -41,7 +41,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@master
       with:
-        dotnet-version: 5.0.302
+        dotnet-version: 6.0.x
         
       # 生成项目  Release模式
     #- name: Build
