@@ -14,7 +14,7 @@
 
   <!-- Package 相关设置 -->
   <PropertyGroup>
-    <Version>4.4.3</Version>
+    <Version>5.0.0</Version>
     <PackageIconUrl></PackageIconUrl>
     <RepositoryType>git</RepositoryType>
 	  <PackageProjectUrl>https://github.com/tanyongzheng/AbpvNext.BlobStoring.Extensions</PackageProjectUrl>
